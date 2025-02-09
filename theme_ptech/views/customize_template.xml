@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data noupdate="0">
+        <template id="custom_footer" inherit_id="website.snippet_options">
+            <xpath expr="//div/we-select[@data-variable='footer-template']" position="inside">
+                <we-button title="Custom Footer"
+                           data-name="footer_custom_opt"
+                           data-customize-website-views="theme_ptech.footer_custom"
+                           data-customize-website-variable="'custom_footer'"
+                           data-img="/website/static/src/img/snippets_options/footer_template_links.svg"
+                />
+            </xpath>
+        </template>
+        <template id="template_login_btn" inherit_id="portal.user_sign_in" active="True">
+            <xpath expr="//a" position="replace">
+                <a t-attf-href="/web/login" t-attf-class="#{_link_class}">
+                    <span t-if="request.session.profile_session" class="text-danger fa fa-circle me-2"/>
+                    <span t-else="" class="bi bi-arrow-left me-2"/>Sign in
+                </a>
+            </xpath>
+        </template>
+        <template id="template_header_customization" inherit_id="website.template_header_default" active="True">
+            <xpath expr="//t[@t-set='_nav_class']" position="replace">
+                <t t-set="_nav_class" t-valuef="mx-auto"/>
+            </xpath>
+            <xpath expr="//t[@t-call='portal.placeholder_user_sign_in']/t[@t-set='_link_class']" position="replace">
+                <t t-set="_link_class" t-valuef="btn btn-primary"/>
+            </xpath>
+            <xpath expr="//t[@t-call='portal.user_dropdown']/t[@t-set='_link_class']" position="replace">
+                <t t-set="_link_class" t-valuef="btn btn-primary"/>
+            </xpath>
+        </template>
+        <template id="header_custom_social_links" inherit_id="website.header_social_links" name="Header Social Links"
+                  active="True">
+            <xpath expr="//li" position="replace">
+                <div t-attf-class="s_social_media {{_div_class}}">
+                    <a t-if="website.company_id.social_facebook"
+                       t-att-href="website.company_id.social_facebook" class="me-2"
+                       target="_blank">
+                        <span class="fa fa-facebook-square"/>
+                    </a>
+                    <a t-if="website.company_id.social_twitter"
+                       t-att-href="website.company_id.social_twitter" class="me-2"
+                       target="_blank">
+                        <span class="fa fa-twitter"/>
+                    </a>
+                    <a t-if="website.company_id.social_snapchat"
+                       t-att-href="website.company_id.social_snapchat" class="me-2"
+                       target="_blank">
+                        <span class="fa fa-snapchat-ghost"/>
+                    </a>
+                    <a t-if="website.company_id.social_linkedin"
+                       t-att-href="website.company_id.social_linkedin" class="me-2"
+                       target="_blank">
+                        <span class="fa fa-linkedin"/>
+                    </a>
+                    <a t-if="website.company_id.social_youtube"
+                       t-att-href="website.company_id.social_youtube" class="me-2"
+                       target="_blank">
+                        <span class="fa fa-youtube-play"/>
+                    </a>
+                    <a t-if="website.company_id.social_github"
+                       t-att-href="website.company_id.social_github" class="me-2"
+                       target="_blank">
+                        <span class="fa fa-github"/>
+                    </a>
+                    <a t-if="website.company_id.social_instagram"
+                       t-att-href="website.company_id.social_instagram" class="me-2"
+                       target="_blank">
+                        <span class="fa fa-instagram"/>
+                    </a>
+                    <a t-if="website.company_id.social_telegram"
+                       t-att-href="website.company_id.social_telegram" class="me-2"
+                       target="_blank">
+                        <span class="fa fa-send"/>
+                    </a>
+                    <a t-if="website.company_id.social_tiktok"
+                       t-att-href="website.company_id.social_tiktok" class="me-2"
+                       target="_blank">
+                        <span class="fa fa-tiktok"/>
+                    </a>
+                    <a t-if="website.company_id.email and email_icon"
+                       t-att-href="'mailto: %s' %website.company_id.email" class="me-2">
+                        <span class="fa fa-envelope"/>
+                    </a>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="footer_custom" inherit_id="website.layout" name="Custom Footer"
+                  active="False">
+            <xpath expr="//footer" position="replace">
+                <footer class="footer" id="footer" t-if="not no_footer">
+                    <div id="top_footer" class="bg-dark py-4"
+                         t-if="website.company_id.social_facebook or website.company_id.social_twitter or website.company_id.social_snapchat or website.company_id.social_linkedin or website.company_id.social_youtube or website.company_id.social_instagram or website.company_id.social_telegram or website.company_id.social_tiktok">
+                        <h3 class="text-primary text-center">Keep in touch</h3>
+                        <t t-call="website.placeholder_header_social_links">
+                            <t t-set="_div_class"
+                               t-valuef="d-flex justify-content-center gap-3 fs-3"/>
+                        </t>
+                    </div>
+                    <div class="footer-content bg-primary" style="">
+                        <div class="container" style="">
+                            <div class="row pb-5">
+                                <div class="col-12 col-sm-6 col-lg-2 col-xl-3 mb-4">
+                                    <h5 class="pb-2 mb-3 pt-1">Short links</h5>
+                                    <ul class="list-unstyled d-flex flex-column h-100 fs-6">
+                                        <li class="mb-3">
+                                            <a class="text-white d-block ps-0" href="/aboutus">
+                                                About Us
+                                            </a>
+                                        </li>
+                                        <li class="mb-3">
+                                            <a class="text-white d-block ps-0"
+                                               href="/shipping-policy">
+                                                Shipping Policy
+                                            </a>
+                                        </li>
+                                        <li class="mb-3">
+                                            <a class="text-white d-block ps-0"
+                                               href="/return-policy">
+                                                Return Policy
+                                            </a>
+                                        </li>
+                                        <li class="mb-3">
+                                            <a class="text-white d-block ps-0"
+                                               href="/privacy-policy">
+                                                Privacy Policy
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-3 col-xl-3 mb-4">
+                                    <h5 class="pb-2 mb-3 pt-1">Customer Serves</h5>
+                                    <ul class="list-unstyled d-flex flex-column h-100 fs-6">
+                                        <li class="mb-3">
+                                            <a class="text-white d-block ps-0" href="/faqs">
+                                                FAQs
+                                            </a>
+                                        </li>
+                                        <li class="mb-3">
+                                            <a class="text-white d-block ps-0"
+                                               href="/contactus">
+                                                Contact Us
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-3 col-xl-3 mb-4">
+                                    <h5 class="pb-2 mb-3 pt-1">Contact Us</h5>
+                                    <div class="d-flex flex-column h-100 fs-6">
+                                        <div class="pb-3 d-flex align-items-start"
+                                             t-if="website.company_id.address_label and website.company_id.address_url">
+                                            <a t-att-href="website.company_id.address_url" target="_blank"
+                                               class="text-white py-1">
+                                                <span t-field="website.company_id.address_label"/>
+                                            </a>
+                                        </div>
+                                        <div class="pb-3" t-if="website.company_id.phone">
+                                            <a t-att-href="'tel: %s' %website.company_id.phone"
+                                               class="text-white py-1">
+                                                <span t-field="website.company_id.phone"/>
+                                            </a>
+                                        </div>
+                                        <div class="pb-3" t-if="website.company_id.email">
+                                            <a t-att-href="'mailto: %s' %website.company_id.email"
+                                               class="text-white py-1">
+                                                <span t-field="website.company_id.email"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
+                                    <h5 class="pb-2 mb-3 pt-1">Newsletter</h5>
+                                    <p class="">Get the best offers and discounts</p>
+                                    <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe"
+                                         data-vxml="001" data-list-id="1" data-name="Newsletter"
+                                         data-snippet="s_newsletter_subscribe_form">
+                                        <div class="js_subscribed_wrap d-none">
+                                            <p class="_default_snippet_text">
+                                                <i class="h5-fs fa fa-check-circle-o" role="img"/>
+                                                Thanks for registering!
+                                            </p>
+                                        </div>
+                                        <div class="js_subscribe_wrap">
+                                            <div class="input-group">
+                                                <input type="email" name="email" class="js_subscribe_value form-control"
+                                                       placeholder="johnsmith@example.com"/>
+                                                <a role="button" href="#"
+                                                   class="btn btn-secondary js_subscribe_btn o_submit o_default_snippet_text">
+                                                    Subscribe
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="copyrights bg-dark border-top border-white fs-6 py-2">
+                        <div class="container">
+                            <div class="d-flex flex-wrap align-items-center justify-content-between">
+                                <p class="copy-text m-0">
+                                    Copyright © 2024 All rights reserved to Arcelia Trading
+                                </p>
+                                <p class="copy-text m-0">
+                                    <span>Electronic Commercial Register:</span>
+                                    <span>4030478610</span>
+                                    |
+                                    <span>Tax Number:</span>
+                                    <span>311350542200003</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div t-if="website.company_id.mobile" class="whatsapp_btn">
+                        <a t-att-href="'https://wa.me/+966%s' %website.company_id.mobile" class="" target="_blank">
+                            <img src="/theme_rabezz_realestate/static/src/img/icons/whatsapp.png" class="img-fluid"
+                                 alt=""/>
+                        </a>
+                    </div>
+                </footer>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>
