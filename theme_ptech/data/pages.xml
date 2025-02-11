@@ -4,7 +4,143 @@
         <template name="Costume Home" id="costume_home_page" inherit_id="website.homepage"
                   active="True">
             <xpath expr="//div[@id='wrap']" position="replace">
-                <div id="wrap" class="oe_structure oe_empty"/>
+                <div id="wrap" class="oe_structure oe_empty">
+                    <div id="landingCarousel" class="carousel slide carousel-fade text-white" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="bg-shadow-s py-4 py-lg-5 w-100" id="slide_1">
+                                    <div class="container d-flex align-items-center h-100 pb-5">
+                                        <div class="w-lg-50 py-lg-5">
+                                            <h1 class="display-2">
+                                                <span class="text-secondary">Organizing your work</span>
+                                                <br/>starts here
+                                            </h1>
+                                            <p>At <span class="text-secondary">Premium Tech</span>, organizing your work
+                                                starts
+                                                here! Efficiency and organization are key factors for achieving success.
+                                                With
+                                                Odoo, you can manage all aspects of your business, from project
+                                                management, sales, inventory, and human resources to accounting.
+                                                Odoo provides integrated tools that help streamline workflows, improve
+                                                performance, and reduce human errors, saving you time and effort so you
+                                                can
+                                                focus on growth and development.
+                                            </p>
+                                            <div class="d-flex">
+                                                <a href="/contactus" class="btn btn-outline-light me-3 me-lg-4">Contact
+                                                    us
+                                                    <i class="bi bi-arrow-right"/>
+                                                </a>
+                                                <a href="/web/signup" class="btn btn-secondary me-3 me-lg-4">Sign up</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="bg-shadow-e py-4 py-lg-5 w-100" id="slide_2">
+                                    <div class="container d-flex align-items-center h-100 pb-5">
+                                        <div class="w-lg-50 ms-auto">
+                                            <h2 class="display-2 text-secondary">Comprehensive Management</h2>
+                                            <h2 class="display-2 text-end">Remarkable Results starts here</h2>
+                                            <p>True success in business comes from the integration of all departments.
+                                                Every aspect of your business should work in harmony to achieve the best
+                                                results. This is exactly what Odoo offers—a comprehensive solution that
+                                                connects all your business operations into a single platform.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="bg-shadow-e py-4 py-lg-5 w-100" id="slide_3">
+                                    <div class="container d-flex align-items-center h-100 pb-5">
+                                        <div class="w-lg-50 ms-auto">
+                                            <h2 class="display-2 text-secondary">Smart Solutions for Outstanding
+                                                Performance
+                                            </h2>
+                                            <p>The use of technology and advanced tools is essential for achieving
+                                                optimal
+                                                performance at work. In today’s business world, every entrepreneur needs
+                                                innovative solutions to enhance efficiency and make smarter decisions.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#landingCarousel" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"/>
+                            <button type="button" data-bs-target="#landingCarousel" data-bs-slide-to="1"
+                                    aria-label="Slide 2"/>
+                            <button type="button" data-bs-target="#landingCarousel" data-bs-slide-to="2"
+                                    aria-label="Slide 3"/>
+                        </div>
+                    </div>
+                    <div class="" id="counter">
+                        <div class="container">
+                            <div class="counter-container row mx-0 py-4">
+                                <div class="col-md-6 col-lg-3 d-flex justify-content-center">
+                                    <div class="p-4 p-lg-5 d-flex flex-column align-items-center text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
+                                             viewBox="0 0 48 48" fill="none">
+                                            <path d="M24 24C30.6006 24 36 18.5999 36 12C36 5.40013 30.6006 0 24 0C17.3994 0 12 5.40013 12 12C12 18.5999 17.3994 24 24 24ZM24 30C16.0503 30 0 34.0503 0 42V48H48V42C48 34.0503 31.9497 30 24 30Z"
+                                                  fill="black"/>
+                                        </svg>
+                                        <span class="h3">
+                                            <span class="text-secondary">+</span>1500
+                                        </span>
+                                        <span class="text-secondary">User</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 d-flex justify-content-center">
+                                    <div class="p-4 p-lg-5 d-flex flex-column align-items-center text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="48"
+                                             viewBox="0 0 46 48" fill="none">
+                                            <path d="M34.8215 17.4468C31.7497 4.79966 23.7103 0.335976 23.3743 0.14399C23.1971 0.0494512 22.9993 0 22.7984 0C22.5975 0 22.3997 0.0494512 22.2224 0.14399C21.8144 0.383972 13.751 4.94365 10.7272 17.4947C7.82344 19.8706 0 26.7821 0 32.3977C0 32.7159 0.126419 33.0211 0.351447 33.2461C0.576474 33.4712 0.881677 33.5976 1.19991 33.5976H9.59931V37.1973C9.59931 37.5156 9.72573 37.8208 9.95076 38.0458C10.1758 38.2708 10.481 38.3973 10.7992 38.3973H34.7975C35.1157 38.3973 35.4209 38.2708 35.646 38.0458C35.871 37.8208 35.9974 37.5156 35.9974 37.1973V33.5976H44.3968C44.7151 33.5976 45.0203 33.4712 45.2453 33.2461C45.4703 33.0211 45.5967 32.7159 45.5967 32.3977C45.5967 26.7581 37.7013 19.8226 34.8215 17.4468ZM25.1982 31.1978H20.3985C20.0803 31.1978 19.7751 31.0713 19.5501 30.8463C19.325 30.6213 19.1986 30.3161 19.1986 29.9979C19.1986 29.6796 19.325 29.3744 19.5501 29.1494C19.7751 28.9244 20.0803 28.7979 20.3985 28.7979H25.1982C25.5164 28.7979 25.8216 28.9244 26.0467 29.1494C26.2717 29.3744 26.3981 29.6796 26.3981 29.9979C26.3981 30.3161 26.2717 30.6213 26.0467 30.8463C25.8216 31.0713 25.5164 31.1978 25.1982 31.1978ZM22.7984 26.3981C21.6118 26.3981 20.4518 26.0462 19.4652 25.387C18.4786 24.7278 17.7096 23.7908 17.2555 22.6945C16.8014 21.5982 16.6826 20.3919 16.9141 19.2281C17.1456 18.0643 17.717 16.9953 18.556 16.1562C19.3951 15.3171 20.4641 14.7457 21.6279 14.5142C22.7917 14.2828 23.998 14.4016 25.0943 14.8557C26.1906 15.3098 27.1276 16.0787 27.7868 17.0654C28.4461 18.052 28.7979 19.2119 28.7979 20.3985C28.7979 21.9897 28.1658 23.5157 27.0407 24.6409C25.9156 25.766 24.3896 26.3981 22.7984 26.3981ZM32.3977 40.7971C32.0794 40.7971 31.7742 40.9235 31.5492 41.1485C31.3242 41.3736 31.1978 41.6788 31.1978 41.997V44.3968C31.1978 44.7151 31.3242 45.0203 31.5492 45.2453C31.7742 45.4703 32.0794 45.5967 32.3977 45.5967C32.7159 45.5967 33.0211 45.4703 33.2461 45.2453C33.4712 45.0203 33.5976 44.7151 33.5976 44.3968V41.997C33.5976 41.6788 33.4712 41.3736 33.2461 41.1485C33.0211 40.9235 32.7159 40.7971 32.3977 40.7971ZM13.1991 40.7971C12.8808 40.7971 12.5756 40.9235 12.3506 41.1485C12.1256 41.3736 11.9991 41.6788 11.9991 41.997V44.3968C11.9991 44.7151 12.1256 45.0203 12.3506 45.2453C12.5756 45.4703 12.8808 45.5967 13.1991 45.5967C13.5173 45.5967 13.8225 45.4703 14.0475 45.2453C14.2725 45.0203 14.399 44.7151 14.399 44.3968V41.997C14.399 41.6788 14.2725 41.3736 14.0475 41.1485C13.8225 40.9235 13.5173 40.7971 13.1991 40.7971ZM22.0064 47.6846C22.2204 47.8871 22.5038 48 22.7984 48C23.093 48 23.3764 47.8871 23.5903 47.6846C25.6229 45.7727 27.1838 43.4149 28.15 40.7971H17.4468C18.4129 43.4149 19.9738 45.7727 22.0064 47.6846Z"
+                                                  fill="#231F20"/>
+                                        </svg>
+                                        <span class="h3">
+                                            <span class="text-secondary">+</span>80
+                                        </span>
+                                        <span class="text-secondary">Project</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 d-flex justify-content-center">
+                                    <div class="p-4 p-lg-5 d-flex flex-column align-items-center text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="49" height="48"
+                                             viewBox="0 0 49 48" fill="none">
+                                            <path d="M48.2817 2.35966L46.0854 0.0256137L41.7311 4.1334V0H38.5294V7.15261L37.556 8.0715C33.4346 4.25806 28.027 2.13848 22.412 2.13554C10.0566 2.13554 0 12.1921 0 24.5475C0 30.7684 2.55176 36.4002 6.65955 40.4664L1.98506 45.9189L4.41836 48L9.10245 42.5347C12.9462 45.4054 17.6145 46.9574 22.412 46.9594C27.2094 46.9574 31.8777 45.4054 35.7215 42.5347L40.4055 48L42.8388 45.9189L38.1644 40.4664C40.2745 38.3871 41.95 35.9089 43.0933 33.1759C44.2366 30.443 44.8249 27.5099 44.8239 24.5475C44.8183 20.501 43.7068 16.5331 41.6094 13.0726L39.2305 15.3106C40.7481 18.0544 41.6222 21.1985 41.6222 24.5475C41.6222 35.1419 33.0064 43.7577 22.412 43.7577C11.8175 43.7577 3.20171 35.1419 3.20171 24.5475C3.20171 13.953 11.8175 5.33725 22.412 5.33725C27.3362 5.33725 31.8186 7.21345 35.2188 10.2711L32.8495 12.5091C30.0384 10.0694 26.4173 8.53895 22.4152 8.53895C13.588 8.53895 6.40662 15.7204 6.40662 24.5475C6.40662 33.3746 13.588 40.556 22.4152 40.556C31.2423 40.556 38.4237 33.3746 38.4237 24.5475C38.4237 22.0534 37.793 19.7321 36.7556 17.6382L28.7545 25.159C28.6051 26.7396 27.873 28.208 26.7006 29.2786C25.5283 30.3491 23.9996 30.9452 22.412 30.9509C18.8805 30.9509 16.0085 28.079 16.0085 24.5475C16.0085 21.016 18.8805 18.1441 22.412 18.1441C23.6638 18.1441 24.8228 18.5187 25.8122 19.143L23.286 21.5219C23.0043 21.4386 22.7225 21.3458 22.412 21.3458C21.7787 21.3458 21.1597 21.5336 20.6332 21.8854C20.1067 22.2372 19.6963 22.7372 19.454 23.3223C19.2116 23.9073 19.1482 24.551 19.2718 25.1721C19.3953 25.7932 19.7002 26.3637 20.148 26.8114C20.5958 27.2592 21.1663 27.5641 21.7873 27.6877C22.4084 27.8112 23.0522 27.7478 23.6372 27.5055C24.2222 27.2632 24.7223 26.8528 25.0741 26.3263C25.4259 25.7997 25.6137 25.1807 25.6137 24.5475C25.6137 24.3042 25.5272 24.0896 25.476 23.8623L25.7769 23.5806L25.7705 23.5742L35.0555 14.8463L35.0491 14.8367L37.4248 12.5955L37.4344 12.6083L39.778 10.4056L39.7652 10.3863L40.5945 9.60512H40.6265L40.6553 9.57631L40.6809 9.60512H48.1281V6.40342H43.9915L48.2817 2.35966ZM22.412 24.5507C22.412 24.5475 22.412 24.5475 22.412 24.5507V24.5507Z"
+                                                  fill="#231F20"/>
+                                        </svg>
+                                        <span class="h3">
+                                            <span class="text-secondary">+</span>200
+                                        </span>
+                                        <span class="text-secondary">APP</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 d-flex justify-content-center">
+                                    <div class="p-4 p-lg-5 d-flex flex-column align-items-center text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="38"
+                                             viewBox="0 0 40 38" fill="none">
+                                            <path d="M21.139 7.12673L23.3343 4.93151C24.1042 4.1609 25.0183 3.54953 26.0246 3.13233C27.0308 2.71512 28.1094 2.50025 29.1986 2.5C30.2879 2.49975 31.3666 2.71411 32.373 3.13085C33.3795 3.54759 34.2939 4.15853 35.0642 4.92878C35.8344 5.69903 36.4454 6.61348 36.8621 7.61991C37.2788 8.62633 37.4932 9.705 37.4929 10.7943C37.4927 11.8836 37.2778 12.9622 36.8606 13.9684C36.4434 14.9746 35.832 15.8888 35.0614 16.6587L29.7309 21.9892C28.9609 22.7592 28.0467 23.3701 27.0407 23.7868C26.0346 24.2035 24.9563 24.418 23.8673 24.418C22.7783 24.418 21.7 24.2035 20.694 23.7868C19.6879 23.3701 18.7737 22.7592 18.0037 21.9892"
+                                                  stroke="black" stroke-width="5" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                            <path d="M19.3536 30.8736L17.1587 33.0685C16.3888 33.8391 15.4746 34.4504 14.4684 34.8676C13.4622 35.2849 12.3836 35.4997 11.2943 35.5C10.205 35.5002 9.12633 35.2859 8.11991 34.8691C7.11348 34.4524 6.19903 33.8414 5.42878 33.0712C4.65853 32.3009 4.04759 31.3865 3.63085 30.3801C3.21411 29.3736 2.99975 28.295 3 27.2057C3.00025 26.1164 3.21512 25.0378 3.63233 24.0316C4.04953 23.0253 4.6609 22.1112 5.43151 21.3413L10.762 16.0107C11.5321 15.2407 12.4462 14.6299 13.4523 14.2132C14.4584 13.7965 15.5367 13.582 16.6256 13.582C17.7146 13.582 18.7929 13.7965 19.799 14.2132C20.8051 14.6299 21.7192 15.2407 22.4892 16.0107"
+                                                  stroke="black" stroke-width="5" stroke-linecap="round"
+                                                  stroke-linejoin="round"/>
+                                        </svg>
+                                        <span class="h3">
+                                            <span class="text-secondary">+</span>20
+                                        </span>
+                                        <span class="text-secondary">Integration</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </xpath>
         </template>
         <!--        Home Page        -->

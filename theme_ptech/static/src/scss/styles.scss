@@ -1,3 +1,6 @@
+//------------------------------------------------------------------------------
+// nav
+//------------------------------------------------------------------------------
 header#top nav.ptech-mobile-nav {
   background: #002054;
 
@@ -50,6 +53,10 @@ header#top nav.ptech-nav {
   }
 }
 
+//------------------------------------------------------------------------------
+// footer
+//------------------------------------------------------------------------------
+
 .ptech-footer {
   position: relative;
   z-index: 1;
@@ -91,3 +98,78 @@ header#top nav.ptech-nav {
   }
 }
 
+//------------------------------------------------------------------------------
+// home page
+//------------------------------------------------------------------------------
+#landingCarousel {
+  .carousel-indicators {
+    bottom: 25px;
+
+    [data-bs-target] {
+      height: 14px !important;
+      width: 14px !important;
+      border-radius: 50%;
+      border: none !important;
+      margin: 0 8px;
+
+
+      &.active {
+        background: var(--primary);
+      }
+    }
+  }
+
+  .carousel-item {
+    height: 80vh;
+    display: flex;
+
+    #slide_1::before {
+      background-image: url("../img/landing-1.png");
+
+    }
+
+    #slide_2::before {
+      background-image: url("../img/landing-2.png");
+    }
+
+    #slide_3::before {
+      background-image: url("../img/landing-3.png");
+    }
+
+    #slide_3, #slide_2, #slide_1 {
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transform: rotateY(180deg);
+
+      }
+
+      &.bg-shadow-e::before {
+        background-position: 90% 50%;
+      }
+
+      &.bg-shadow-s::before {
+        background-position: 10% 50%;
+      }
+    }
+  }
+}
+
+#counter {
+  .counter-container {
+    position: relative;
+    z-index: 5;
+    margin-top: -25px;
+    border-radius: 24px;
+    background: #FFF;
+    box-shadow: -1px 6px 13.8px 0px rgba(22, 147, 235, 0.37);
+  }
+}
