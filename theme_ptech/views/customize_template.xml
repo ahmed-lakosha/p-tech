@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
     <data noupdate="0">
+        <template id="custom_header" inherit_id="website.snippet_options">
+            <xpath expr="//div/we-select[@data-variable='header-template']" position="inside">
+                <we-button title="Custom Header"
+                           data-name="header_custom_opt"
+                           data-customize-website-views="theme_ptech.header_custom"
+                           data-customize-website-variable="'custom_header'"
+                           data-img="/website/static/src/img/snippets_options/header_template_default.svg"
+                />
+            </xpath>
+        </template>
         <template id="custom_footer" inherit_id="website.snippet_options">
             <xpath expr="//div/we-select[@data-variable='footer-template']" position="inside">
                 <we-button title="Custom Footer"
@@ -19,71 +29,68 @@
                 </a>
             </xpath>
         </template>
-        <template id="template_header_customization" inherit_id="website.template_header_default" active="True">
-            <xpath expr="//t[@t-set='_nav_class']" position="replace">
-                <t t-set="_nav_class" t-valuef="mx-auto"/>
-            </xpath>
-            <xpath expr="//t[@t-call='portal.placeholder_user_sign_in']/t[@t-set='_link_class']" position="replace">
-                <t t-set="_link_class" t-valuef="btn btn-primary"/>
-            </xpath>
-            <xpath expr="//t[@t-call='portal.user_dropdown']/t[@t-set='_link_class']" position="replace">
-                <t t-set="_link_class" t-valuef="btn btn-primary"/>
-            </xpath>
-        </template>
-        <template id="header_custom_social_links" inherit_id="website.header_social_links" name="Header Social Links"
-                  active="True">
-            <xpath expr="//li" position="replace">
-                <div t-attf-class="s_social_media {{_div_class}}">
-                    <a t-if="website.company_id.social_facebook"
-                       t-att-href="website.company_id.social_facebook" class="me-2"
-                       target="_blank">
-                        <span class="fa fa-facebook-square"/>
-                    </a>
-                    <a t-if="website.company_id.social_twitter"
-                       t-att-href="website.company_id.social_twitter" class="me-2"
-                       target="_blank">
-                        <span class="fa fa-twitter"/>
-                    </a>
-                    <a t-if="website.company_id.social_snapchat"
-                       t-att-href="website.company_id.social_snapchat" class="me-2"
-                       target="_blank">
-                        <span class="fa fa-snapchat-ghost"/>
-                    </a>
-                    <a t-if="website.company_id.social_linkedin"
-                       t-att-href="website.company_id.social_linkedin" class="me-2"
-                       target="_blank">
-                        <span class="fa fa-linkedin"/>
-                    </a>
-                    <a t-if="website.company_id.social_youtube"
-                       t-att-href="website.company_id.social_youtube" class="me-2"
-                       target="_blank">
-                        <span class="fa fa-youtube-play"/>
-                    </a>
-                    <a t-if="website.company_id.social_github"
-                       t-att-href="website.company_id.social_github" class="me-2"
-                       target="_blank">
-                        <span class="fa fa-github"/>
-                    </a>
-                    <a t-if="website.company_id.social_instagram"
-                       t-att-href="website.company_id.social_instagram" class="me-2"
-                       target="_blank">
-                        <span class="fa fa-instagram"/>
-                    </a>
-                    <a t-if="website.company_id.social_telegram"
-                       t-att-href="website.company_id.social_telegram" class="me-2"
-                       target="_blank">
-                        <span class="fa fa-send"/>
-                    </a>
-                    <a t-if="website.company_id.social_tiktok"
-                       t-att-href="website.company_id.social_tiktok" class="me-2"
-                       target="_blank">
-                        <span class="fa fa-tiktok"/>
-                    </a>
-                    <a t-if="website.company_id.email and email_icon"
-                       t-att-href="'mailto: %s' %website.company_id.email" class="me-2">
-                        <span class="fa fa-envelope"/>
-                    </a>
-                </div>
+
+        <template id="header_custom" inherit_id="website.layout" name="Custom Header" active="False">
+            <xpath expr="//header//nav" position="replace">
+                <t t-call="website.navbar">
+                    <t t-set="_navbar_classes" t-valuef="d-none d-lg-block shadow-sm ptech-nav"/>
+
+                    <div id="o_main_nav" class="o_main_nav container">
+                        <!-- Brand -->
+                        <t t-call="website.placeholder_header_brand">
+                            <t t-set="_link_class" t-valuef="me-4"/>
+                        </t>
+                        <!-- Navbar -->
+                        <t t-call="website.navbar_nav">
+                            <t t-set="_nav_class" t-valuef="mx-auto"/>
+
+                            <!-- Menu -->
+                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                <t t-call="website.submenu">
+                                    <t t-set="item_class" t-valuef="nav-item"/>
+                                    <t t-set="link_class" t-valuef="nav-link"/>
+                                </t>
+                            </t>
+                        </t>
+                        <!-- Extra elements -->
+                        <ul class="navbar-nav align-items-center gap-2 flex-shrink-0 justify-content-end ps-3">
+                            <!-- Search Bar -->
+                            <t t-call="website.placeholder_header_search_box"
+                               t-nocache="The searchbox should not cache previous searches.">
+                                <t t-set="_layout" t-valuef="modal"/>
+                                <t t-set="_input_classes" t-valuef="border border-end-0 p-3"/>
+                                <t t-set="_submit_classes" t-valuef="border border-start-0 px-4 bg-o-color-4"/>
+                                <t t-set="_button_classes" t-valuef="o_navlink_background text-reset"/>
+                            </t>
+                            <!-- Text element -->
+                            <t t-call="website.placeholder_header_text_element"/>
+                            <!-- Social -->
+                            <t t-call="website.placeholder_header_social_links"/>
+                            <!-- Language Selector -->
+                            <t t-call="website.placeholder_header_language_selector">
+                                <t t-set="_btn_class" t-value="_additional_btn_color or 'nav-link'"/>
+                                <t t-set="_dropdown_menu_class" t-valuef="dropdown-menu-end"/>
+                            </t>
+                            <!-- Sign In -->
+                            <t t-call="portal.placeholder_user_sign_in">
+                                <t t-set="_link_class"
+                                   t-valuef="o_nav_link_btn btn btn-primary"/>
+                            </t>
+                            <!-- User Dropdown -->
+                            <t t-call="portal.user_dropdown">
+                                <t t-set="_user_name" t-value="True"/>
+                                <t t-set="_item_class" t-valuef="dropdown"/>
+                                <t t-set="_link_class" t-valuef="o_nav_link_btn btn btn-primary"/>
+                                <t t-set="_dropdown_menu_class" t-valuef="dropdown-menu-end"/>
+                            </t>
+                            <!-- Call To Action -->
+                            <t t-call="website.placeholder_header_call_to_action"/>
+                        </ul>
+                    </div>
+                </t>
+                <t t-call="website.template_header_mobile">
+                    <t t-set="_extra_navbar_classes" t-valuef="ptech-mobile-nav navbar-dark"/>
+                </t>
             </xpath>
         </template>
 
@@ -91,88 +98,123 @@
                   active="False">
             <xpath expr="//footer" position="replace">
                 <footer class="footer" id="footer" t-if="not no_footer">
-                    <div id="top_footer" class="bg-dark py-4"
-                         t-if="website.company_id.social_facebook or website.company_id.social_twitter or website.company_id.social_snapchat or website.company_id.social_linkedin or website.company_id.social_youtube or website.company_id.social_instagram or website.company_id.social_telegram or website.company_id.social_tiktok">
-                        <h3 class="text-primary text-center">Keep in touch</h3>
-                        <t t-call="website.placeholder_header_social_links">
-                            <t t-set="_div_class"
-                               t-valuef="d-flex justify-content-center gap-3 fs-3"/>
-                        </t>
-                    </div>
-                    <div class="footer-content bg-primary" style="">
+                    <div class="footer-content text-white ptech-footer overflow-hidden" style="">
                         <div class="container" style="">
                             <div class="row pb-5">
-                                <div class="col-12 col-sm-6 col-lg-2 col-xl-3 mb-4">
-                                    <h5 class="pb-2 mb-3 pt-1">Short links</h5>
-                                    <ul class="list-unstyled d-flex flex-column h-100 fs-6">
+                                <div class="col-12 col-sm-6 col-lg-4 pt-4">
+                                    <h3 class="text-secondary pb-2 mb-3 pt-1">Short links</h3>
+                                    <ul class="list-unstyled d-flex flex-column h-100 h-4">
                                         <li class="mb-3">
-                                            <a class="text-white d-block ps-0" href="/aboutus">
+                                            <a class="text-white d-block ps-0" href="/">
+                                                home
+                                            </a>
+                                        </li>
+                                        <li class="mb-3">
+                                            <a class="text-white d-block ps-0" href="/#">
                                                 About Us
                                             </a>
                                         </li>
                                         <li class="mb-3">
                                             <a class="text-white d-block ps-0"
-                                               href="/shipping-policy">
-                                                Shipping Policy
+                                               href="/#">
+                                                Services
                                             </a>
                                         </li>
                                         <li class="mb-3">
                                             <a class="text-white d-block ps-0"
-                                               href="/return-policy">
-                                                Return Policy
-                                            </a>
-                                        </li>
-                                        <li class="mb-3">
-                                            <a class="text-white d-block ps-0"
-                                               href="/privacy-policy">
-                                                Privacy Policy
+                                               href="/#">
+                                                Odoo apps
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="col-12 col-sm-6 col-lg-3 col-xl-3 mb-4">
-                                    <h5 class="pb-2 mb-3 pt-1">Customer Serves</h5>
-                                    <ul class="list-unstyled d-flex flex-column h-100 fs-6">
-                                        <li class="mb-3">
-                                            <a class="text-white d-block ps-0" href="/faqs">
-                                                FAQs
-                                            </a>
-                                        </li>
+                                <div class="col-12 col-sm-6 col-lg-4 pt-4">
+                                    <h3 class="text-secondary pb-2 mb-3 pt-1">Customer Serves</h3>
+                                    <ul class="list-unstyled d-flex flex-column h-100 h-4">
                                         <li class="mb-3">
                                             <a class="text-white d-block ps-0"
                                                href="/contactus">
                                                 Contact Us
                                             </a>
                                         </li>
+                                        <li class="mb-3">
+                                            <a class="text-white d-block ps-0"
+                                               t-attf-href="mailto:{{website.company_id.email}}">
+                                                E-mail address
+                                            </a>
+                                        </li>
+                                        <li class="mb-3">
+                                            <a class="text-white d-block ps-0"
+                                               t-attf-href="tel:{{website.company_id.phone}}">
+                                                Phone number
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
-                                <div class="col-12 col-sm-6 col-lg-3 col-xl-3 mb-4">
-                                    <h5 class="pb-2 mb-3 pt-1">Contact Us</h5>
-                                    <div class="d-flex flex-column h-100 fs-6">
-                                        <div class="pb-3 d-flex align-items-start"
-                                             t-if="website.company_id.address_label and website.company_id.address_url">
-                                            <a t-att-href="website.company_id.address_url" target="_blank"
-                                               class="text-white py-1">
-                                                <span t-field="website.company_id.address_label"/>
+                                <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                                    <!-- Brand -->
+                                    <div class="text-end">
+                                        <t t-call="website.placeholder_header_brand"/>
+                                    </div>
+                                    <p class="">At Premium Tech, we are more than just a solutions provider – we are
+                                        your growth partner!With our expertise in ERP systems, especially Odoo, we
+                                        provide you with the tools and technologies that give you complete control over
+                                        your business.
+                                    </p>
+                                    <div class="mb-4"
+                                         t-if="website.company_id.social_facebook or website.company_id.social_twitter or website.company_id.social_linkedin or website.company_id.social_youtube or website.company_id.social_instagram  or website.company_id.social_tiktok or website.company_id.mobile or website.company_id.website or website.company_id.email">
+                                        <div class="s_social_media">
+                                            <a t-if="website.company_id.social_linkedin"
+                                               t-att-href="website.company_id.social_linkedin" class="me-2"
+                                               target="_blank">
+                                                <span class="fa fa-linkedin"/>
                                             </a>
-                                        </div>
-                                        <div class="pb-3" t-if="website.company_id.phone">
-                                            <a t-att-href="'tel: %s' %website.company_id.phone"
-                                               class="text-white py-1">
-                                                <span t-field="website.company_id.phone"/>
+                                            <a t-if="website.company_id.social_twitter"
+                                               t-att-href="website.company_id.social_twitter" class="me-2"
+                                               target="_blank">
+                                                <span class="bi bi-twitter-x"/>
                                             </a>
-                                        </div>
-                                        <div class="pb-3" t-if="website.company_id.email">
-                                            <a t-att-href="'mailto: %s' %website.company_id.email"
-                                               class="text-white py-1">
-                                                <span t-field="website.company_id.email"/>
+                                            <a t-if="website.company_id.mobile"
+                                               t-attf-href="https://wa.me/{{website.company_id.mobile}}"
+                                               class="me-2">
+                                                <span class="bi bi-whatsapp"/>
+                                            </a>
+                                            <a t-if="website.company_id.email"
+                                               t-attf-href="mailto:{{website.company_id.email}}" class="me-2">
+                                                <span class="bi bi-google"/>
+                                            </a>
+                                            <a t-if="website.company_id.social_facebook"
+                                               t-att-href="website.company_id.social_facebook" class="me-2"
+                                               target="_blank">
+                                                <span class="fa fa-facebook"/>
+                                            </a>
+                                            <a t-if="website.company_id.website"
+                                               t-att-href="website.company_id.website" class="me-2"
+                                               target="_blank">
+                                                <span class="bi bi-globe"/>
+                                            </a>
+                                            <a t-if="website.company_id.social_youtube"
+                                               t-att-href="website.company_id.social_youtube" class="me-2"
+                                               target="_blank">
+                                                <span class="bi bi-youtube"/>
+                                            </a>
+                                            <a t-if="website.company_id.social_github"
+                                               t-att-href="website.company_id.social_github" class="me-2"
+                                               target="_blank">
+                                                <span class="bi bi-github"/>
+                                            </a>
+                                            <a t-if="website.company_id.social_instagram"
+                                               t-att-href="website.company_id.social_instagram" class="me-2"
+                                               target="_blank">
+                                                <span class="bi bi-instagram"/>
+                                            </a>
+                                            <a t-if="website.company_id.social_tiktok"
+                                               t-att-href="website.company_id.social_tiktok" class="me-2"
+                                               target="_blank">
+                                                <span class="bi bi-tiktok"/>
                                             </a>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-4 col-xl-3 mb-4">
-                                    <h5 class="pb-2 mb-3 pt-1">Newsletter</h5>
-                                    <p class="">Get the best offers and discounts</p>
                                     <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe"
                                          data-vxml="001" data-list-id="1" data-name="Newsletter"
                                          data-snippet="s_newsletter_subscribe_form">
@@ -184,40 +226,37 @@
                                         </div>
                                         <div class="js_subscribe_wrap">
                                             <div class="input-group">
-                                                <input type="email" name="email" class="js_subscribe_value form-control"
+                                                <input type="email" name="email"
+                                                       class="bg-transparent border-white form-control js_subscribe_value border-end-0"
                                                        placeholder="johnsmith@example.com"/>
                                                 <a role="button" href="#"
-                                                   class="btn btn-secondary js_subscribe_btn o_submit o_default_snippet_text">
-                                                    Subscribe
+                                                   class="btn bg-transparent border-white js_subscribe_btn o_submit o_default_snippet_text p-0 border-start-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
+                                                         viewBox="0 0 48 48" fill="none">
+                                                        <path d="M15.744 7.90993C15.7525 7.84456 15.7741 7.78156 15.8075 7.72468C15.8408 7.6678 15.8852 7.61821 15.9381 7.57885C15.991 7.53948 16.0513 7.51115 16.1153 7.49553C16.1794 7.47991 16.2459 7.47733 16.311 7.48793C17.716 7.69393 19.242 7.95193 20.847 8.25293C20.969 8.27638 21.0778 8.34438 21.1524 8.44369C21.227 8.54299 21.2619 8.6665 21.2505 8.79016C21.239 8.91382 21.1819 9.02878 21.0903 9.11266C20.9987 9.19654 20.8792 9.24334 20.755 9.24393C20.7241 9.24386 20.6933 9.24085 20.663 9.23493C19.1682 8.95228 17.6679 8.69957 16.163 8.47693C16.0324 8.45694 15.9151 8.38609 15.8366 8.27985C15.7581 8.17361 15.7248 8.04062 15.744 7.90993ZM13.6 7.98193C13.6989 7.98193 13.7956 7.95261 13.8778 7.89767C13.96 7.84273 14.0241 7.76464 14.0619 7.67328C14.0998 7.58191 14.1097 7.48138 14.0904 7.38439C14.0711 7.2874 14.0235 7.19831 13.9536 7.12838C13.8836 7.05845 13.7945 7.01083 13.6975 6.99154C13.6006 6.97225 13.5 6.98215 13.4087 7.01999C13.3173 7.05784 13.2392 7.12192 13.1843 7.20415C13.1293 7.28637 13.1 7.38304 13.1 7.48193C13.1 7.61454 13.1527 7.74172 13.2465 7.83549C13.3402 7.92926 13.4674 7.98193 13.6 7.98193ZM38.28 24.7179C38.1811 24.7179 38.0844 24.7473 38.0022 24.8022C37.92 24.8571 37.8559 24.9352 37.8181 25.0266C37.7802 25.118 37.7703 25.2185 37.7896 25.3155C37.8089 25.4125 37.8565 25.5016 37.9264 25.5715C37.9964 25.6414 38.0855 25.689 38.1825 25.7083C38.2794 25.7276 38.38 25.7177 38.4713 25.6799C38.5627 25.642 38.6408 25.5779 38.6957 25.4957C38.7507 25.4135 38.78 25.3168 38.78 25.2179C38.78 25.0853 38.7273 24.9581 38.6336 24.8644C38.5398 24.7706 38.4126 24.7179 38.28 24.7179ZM38.28 27.9599C38.1811 27.9599 38.0844 27.9893 38.0022 28.0442C37.92 28.0991 37.8559 28.1772 37.8181 28.2686C37.7802 28.36 37.7703 28.4605 37.7896 28.5575C37.8089 28.6545 37.8565 28.7436 37.9264 28.8135C37.9964 28.8834 38.0855 28.931 38.1825 28.9503C38.2794 28.9696 38.38 28.9597 38.4713 28.9219C38.5627 28.884 38.6408 28.8199 38.6957 28.7377C38.7507 28.6555 38.78 28.5588 38.78 28.4599C38.78 28.3273 38.7273 28.2001 38.6336 28.1064C38.5398 28.0126 38.4126 27.9599 38.28 27.9599ZM37.78 31.2019C37.6811 31.2019 37.5844 31.2313 37.5022 31.2862C37.42 31.3411 37.3559 31.4192 37.3181 31.5106C37.2802 31.602 37.2703 31.7025 37.2896 31.7995C37.3089 31.8965 37.3565 31.9856 37.4264 32.0555C37.4964 32.1254 37.5855 32.173 37.6825 32.1923C37.7794 32.2116 37.88 32.2017 37.9713 32.1639C38.0627 32.126 38.1408 32.0619 38.1957 31.9797C38.2507 31.8975 38.28 31.8008 38.28 31.7019C38.2803 31.6361 38.2675 31.5709 38.2425 31.51C38.2175 31.4491 38.1807 31.3937 38.1343 31.3471C38.0878 31.3004 38.0326 31.2634 37.9718 31.2382C37.911 31.2129 37.8458 31.1999 37.78 31.1999V31.2019ZM32.592 18.7449L26.359 22.1159C25.9255 22.3475 25.4291 22.4337 24.943 22.3617C24.4568 22.2896 24.0067 22.0633 23.659 21.7159L16.814 14.8419C16.7204 14.7479 16.5932 14.6949 16.4606 14.6947C16.3279 14.6944 16.2005 14.7468 16.1065 14.8404C16.0125 14.9341 15.9595 15.0612 15.9592 15.1939C15.9589 15.3266 16.0114 15.4539 16.105 15.5479L22.95 22.4219C23.4501 22.9216 24.0974 23.2474 24.7967 23.3515C25.4959 23.4556 26.2101 23.3323 26.834 22.9999L33.068 19.6289C33.1258 19.5977 33.1768 19.5554 33.2183 19.5044C33.2597 19.4534 33.2907 19.3947 33.3094 19.3318C33.3282 19.2688 33.3344 19.2028 33.3276 19.1374C33.3208 19.0721 33.3013 19.0087 33.27 18.9509C33.2388 18.8932 33.1964 18.8421 33.1454 18.8007C33.0944 18.7592 33.0358 18.7283 32.9728 18.7095C32.9099 18.6908 32.8438 18.6846 32.7785 18.6913C32.7132 18.6981 32.6498 18.7177 32.592 18.7489V18.7449ZM44.6 18.5269L42.333 19.5149L43.648 20.2349C43.7435 20.2872 43.8194 20.3693 43.864 20.4686C43.9087 20.5679 43.9197 20.6791 43.8954 20.7853C43.871 20.8914 43.8127 20.9867 43.7292 21.0567C43.6458 21.1267 43.5418 21.1675 43.433 21.1729C43.345 21.1729 41.963 21.2439 40.708 21.2439C40.147 21.2541 39.5858 21.2287 39.028 21.1679C38.8969 21.1483 38.7789 21.0774 38.7 20.9708C38.6212 20.8642 38.5879 20.7306 38.6075 20.5994C38.6271 20.4683 38.6981 20.3503 38.8047 20.2714C38.9113 20.1926 39.0449 20.1593 39.176 20.1789C39.9703 20.2498 40.7683 20.2685 41.565 20.2349L40.191 19.4829C40.0777 19.4177 39.9945 19.3107 39.9591 19.1848C39.9238 19.059 39.9392 18.9243 40.0019 18.8096C40.0647 18.6949 40.1699 18.6094 40.2949 18.5713C40.42 18.5332 40.555 18.5457 40.671 18.6059L41.223 18.9059L42.603 18.3059C41.324 17.9806 40.0626 17.5894 38.824 17.1339C37.9514 18.3089 37.0192 19.4384 36.031 20.5179C36.038 20.7409 36.04 20.9609 36.044 21.1819L39.587 21.6119C39.7196 21.6198 39.8437 21.6799 39.9319 21.7792C40.0202 21.8785 40.0653 22.0088 40.0575 22.1414C40.0497 22.274 39.9895 22.3981 39.8902 22.4863C39.7909 22.5746 39.6606 22.6198 39.528 22.6119H39.467L36.051 22.1969C36.0288 25.4371 35.7567 28.6707 35.237 31.8689C35.1733 32.2403 34.9657 32.5716 34.6592 32.7909C34.3527 33.0101 33.9721 33.0996 33.6 33.0399C26.4327 31.9304 19.3865 30.1444 12.556 27.7059C12.2067 27.5738 11.9231 27.3102 11.7659 26.9715C11.6087 26.6328 11.5904 26.246 11.715 25.8939C12.3312 23.4654 12.6234 20.9661 12.584 18.4609L8.236 17.4399C8.17205 17.4249 8.11168 17.3974 8.05835 17.359C8.00502 17.3207 7.95977 17.2722 7.92518 17.2163C7.89059 17.1605 7.86734 17.0984 7.85676 17.0335C7.84618 16.9687 7.84847 16.9024 7.8635 16.8384C7.87854 16.7745 7.90603 16.7141 7.94439 16.6608C7.98276 16.6075 8.03125 16.5622 8.08711 16.5276C8.14296 16.493 8.20508 16.4698 8.26992 16.4592C8.33476 16.4486 8.40105 16.4509 8.465 16.4659L12.597 17.4369V17.1019C11.4826 15.4426 10.5054 13.6951 9.675 11.8769C8.975 11.7719 7.121 11.4899 5.586 11.2349L7.774 12.8849C7.85239 12.9442 7.91156 13.0253 7.94412 13.1181C7.97668 13.2108 7.98119 13.3111 7.95707 13.4064C7.93296 13.5016 7.88129 13.5877 7.80854 13.6538C7.73578 13.7199 7.64516 13.7631 7.548 13.7779L6.629 13.9189L8.976 15.1259C9.03634 15.1548 9.09027 15.1954 9.13461 15.2455C9.17895 15.2956 9.21279 15.354 9.23415 15.4174C9.2555 15.4808 9.26392 15.5478 9.25891 15.6145C9.25391 15.6811 9.23557 15.7461 9.205 15.8056C9.17443 15.8651 9.13223 15.9178 9.08092 15.9607C9.0296 16.0036 8.9702 16.0357 8.90624 16.0553C8.84228 16.0748 8.77505 16.0813 8.70854 16.0743C8.64202 16.0674 8.57757 16.0472 8.519 16.0149L4.8 14.0999C4.70601 14.0516 4.62973 13.9748 4.58212 13.8805C4.53451 13.7861 4.51802 13.6791 4.53501 13.5748C4.55201 13.4705 4.60162 13.3742 4.67671 13.2999C4.75181 13.2255 4.84854 13.1769 4.953 13.1609L6.225 12.9669L3.3 10.7599C3.208 10.6907 3.14274 10.5917 3.11524 10.4799C3.08773 10.3681 3.09968 10.2502 3.14906 10.1461C3.19843 10.0421 3.28221 9.95828 3.38624 9.90887C3.49027 9.85946 3.60816 9.84747 3.72 9.87493C4.772 10.1319 10.048 10.9209 10.102 10.9289C10.1866 10.9417 10.2666 10.976 10.3342 11.0285C10.4018 11.0811 10.4547 11.1501 10.488 11.2289C11.093 12.6068 11.7947 13.9402 12.588 15.2189C12.561 13.7089 12.504 12.4349 12.465 11.6969C12.4537 11.4883 12.4884 11.2797 12.5667 11.086C12.645 10.8923 12.7649 10.7181 12.918 10.5759C13.0696 10.4341 13.2507 10.3274 13.4482 10.2636C13.6458 10.1999 13.8551 10.1805 14.061 10.2069C20.9804 11.2106 27.8302 12.6468 34.57 14.5069C34.8342 14.5798 35.0718 14.7272 35.2544 14.9314C35.4371 15.1357 35.5571 15.3883 35.6 15.6589C35.7728 16.7955 35.8936 17.9394 35.962 19.0869C36.7677 18.1972 37.5137 17.2552 38.195 16.2669C38.2554 16.1681 38.3483 16.0934 38.4577 16.0555C38.5672 16.0175 38.6864 16.0187 38.795 16.0589C40.5902 16.7798 42.4641 17.2867 44.378 17.5689C44.4959 17.558 44.6136 17.5922 44.7073 17.6645C44.801 17.7369 44.8638 17.8421 44.883 17.9589C44.9089 18.0717 44.8948 18.19 44.8432 18.2936C44.7916 18.3972 44.7056 18.4796 44.6 18.5269ZM34.612 15.8129C34.5993 15.7318 34.5634 15.6562 34.5085 15.5951C34.4537 15.534 34.3823 15.4902 34.303 15.4689C27.6083 13.6227 20.8047 12.197 13.932 11.1999C13.914 11.1985 13.896 11.1985 13.878 11.1999C13.8207 11.2006 13.7641 11.213 13.7116 11.2362C13.6592 11.2594 13.612 11.293 13.5729 11.335C13.5339 11.377 13.5037 11.4264 13.4843 11.4804C13.4649 11.5344 13.4566 11.5917 13.46 11.6489C13.627 14.8269 13.884 22.6069 12.66 26.2189C12.6393 26.2711 12.6291 26.3269 12.63 26.383C12.6309 26.4392 12.6429 26.4946 12.6653 26.546C12.6877 26.5975 12.7201 26.6441 12.7605 26.683C12.801 26.722 12.8487 26.7525 12.901 26.7729C19.6695 29.1891 26.6517 30.9584 33.754 32.0569C33.8669 32.0758 33.9827 32.0495 34.0763 31.9836C34.1699 31.9177 34.2337 31.8176 34.254 31.7049C35.1518 26.4538 35.2717 21.0992 34.612 15.8129ZM20.436 36.5999C17.9164 38.2721 15.0947 39.4362 12.129 40.0269C12.004 40.0447 11.8903 40.1092 11.8109 40.2073C11.7314 40.3055 11.692 40.43 11.7007 40.556C11.7093 40.682 11.7652 40.8001 11.8573 40.8865C11.9494 40.9729 12.0707 41.0213 12.197 41.0219C12.2201 41.0217 12.2431 41.02 12.266 41.0169C15.3878 40.4126 18.3573 39.1903 21 37.4219C21.0562 37.3858 21.1046 37.3388 21.1424 37.2837C21.1802 37.2286 21.2065 37.1664 21.2198 37.101C21.2331 37.0355 21.2332 36.968 21.22 36.9025C21.2068 36.837 21.1806 36.7748 21.143 36.7196C21.1054 36.6644 21.0571 36.6173 21.0009 36.581C20.9448 36.5448 20.8819 36.5202 20.8161 36.5087C20.7503 36.4972 20.6828 36.4989 20.6177 36.5139C20.5526 36.5289 20.4912 36.5568 20.437 36.5959L20.436 36.5999ZM15.164 34.0549C15.2351 33.9466 15.2613 33.8149 15.2372 33.6875C15.2131 33.5602 15.1404 33.4472 15.0346 33.3724C14.9288 33.2976 14.7981 33.2668 14.67 33.2865C14.5419 33.3062 14.4265 33.3748 14.348 33.4779C12.6691 35.6166 10.545 37.3644 8.123 38.5999C8.06256 38.6286 8.00848 38.6691 7.96398 38.7191C7.91948 38.7691 7.88545 38.8274 7.86393 38.8908C7.8424 38.9541 7.8338 39.0212 7.83865 39.0879C7.8435 39.1546 7.86168 39.2197 7.89214 39.2793C7.9226 39.3388 7.9647 39.3917 8.01595 39.4347C8.06721 39.4777 8.12657 39.51 8.19053 39.5296C8.25448 39.5493 8.32173 39.5559 8.38829 39.5491C8.45485 39.5422 8.51936 39.5221 8.578 39.4899C11.1509 38.1899 13.401 36.3317 15.164 34.0509V34.0549ZM11.2 30.2879C11.2407 30.1617 11.2296 30.0244 11.1691 29.9064C11.1086 29.7883 11.0037 29.6991 10.8775 29.6584C10.7513 29.6177 10.614 29.6288 10.496 29.6893C10.3779 29.7498 10.2887 29.8547 10.248 29.9809C10.248 29.9969 9.679 31.6149 6.925 34.0679C6.82595 34.1561 6.76598 34.28 6.75829 34.4124C6.7506 34.5448 6.79582 34.6749 6.884 34.7739C6.97219 34.873 7.09611 34.933 7.22851 34.9406C7.36091 34.9483 7.49095 34.9031 7.59 34.8149C10.585 32.1499 11.179 30.3619 11.2 30.2879Z"
+                                                              fill="#7BE0FF"/>
+                                                    </svg>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="copyrights bg-dark border-top border-white fs-6 py-2">
-                        <div class="container">
-                            <div class="d-flex flex-wrap align-items-center justify-content-between">
-                                <p class="copy-text m-0">
-                                    Copyright © 2024 All rights reserved to Arcelia Trading
-                                </p>
-                                <p class="copy-text m-0">
-                                    <span>Electronic Commercial Register:</span>
-                                    <span>4030478610</span>
-                                    |
-                                    <span>Tax Number:</span>
-                                    <span>311350542200003</span>
-                                </p>
+                            <div class="copyrights border-top border-white fs-6 py-2">
+                                <div class="d-flex flex-wrap align-items-center justify-content-between">
+                                    <div class="d-flex flex-nowrap gap-1">
+                                        <img src="/theme_ptech/static/src/img/Cart.png"/>
+                                        <img src="/theme_ptech/static/src/img/Mastercard.png"/>
+                                        <img src="/theme_ptech/static/src/img/Discover.png"/>
+                                        <img src="/theme_ptech/static/src/img/Visa.png"/>
+                                        <img src="/theme_ptech/static/src/img/ApplePay.png"/>
+                                    </div>
+                                    <p class="copy-text m-0">
+                                        Premium Tech © 2025, All rights reserved
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div t-if="website.company_id.mobile" class="whatsapp_btn">
-                        <a t-att-href="'https://wa.me/+966%s' %website.company_id.mobile" class="" target="_blank">
-                            <img src="/theme_rabezz_realestate/static/src/img/icons/whatsapp.png" class="img-fluid"
-                                 alt=""/>
-                        </a>
                     </div>
                 </footer>
             </xpath>
