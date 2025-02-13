@@ -19,6 +19,7 @@
         'security/ir.model.access.csv',
 
         'views/customize_template.xml',
+        'views/faqs_views.xml',
 
         'data/pages.xml',
     ],
@@ -28,10 +29,14 @@
     ],
     'assets': {
         'web.assets_frontend': [
+            'theme_ptech/static/src/lib/owl-carousel/css/owl.carousel.min.css',
+            'theme_ptech/static/src/lib/owl-carousel/css/owl.theme.default.min.css',
+            'theme_ptech/static/src/lib/owl-carousel/js/owl.carousel.min.js',
             'theme_ptech/static/src/lib/bootstrap-icons/bootstrap-icons.css',
             'theme_ptech/static/src/scss/styles.scss',
             'theme_ptech/static/src/scss/custom.scss',
             'theme_ptech/static/src/scss/home_style.scss',
+            'theme_ptech/static/src/js/lib-call.js',
             'theme_ptech/static/src/js/script.js',
         ],
         'web._assets_primary_variables': [

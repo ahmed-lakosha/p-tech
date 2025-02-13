@@ -1,1 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_website_services,access_website_services,model_website_services,base.group_user,1,1,1,1
+public_access_website_services,public_access_website_services,model_website_services,,1,0,0,0

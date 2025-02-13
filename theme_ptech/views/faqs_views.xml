@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--        Services          -->
+    <record id="id_form_view_services" model="ir.ui.view">
+        <field name="name">Services</field>
+        <field name="model">website.services</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="title"/>
+                            <field name="description"/>
+                            <field name="image" widget="image"/>
+                            <field name="sequence" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="id_list_view_services" model="ir.ui.view">
+        <field name="name">Services</field>
+        <field name="model">website.services</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="title"/>
+                <field name="description"/>
+            </list>
+        </field>
+    </record>
+    <record id="id_action_services" model="ir.actions.act_window">
+        <field name="name">Services</field>
+        <field name="res_model">website.services</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'list', 'view_id': ref('id_list_view_services')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('id_form_view_services')}),
+        ]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a FAQ
+            </p>
+            <p>
+                Create and manage the Services in your website
+            </p>
+        </field>
+    </record>
+    <menuitem id="menu_services"
+              parent="website.menu_content"
+              sequence="22"
+              name="Services"
+              action="id_action_services"/>
+
+    <record id="hr_job_comp_rule" model="ir.rule">
+        <field name="name">Services</field>
+        <field name="model_id" ref="model_website_services"/>
+        <field name="domain_force">[('company_id', 'in', company_ids + [False])]</field>
+    </record>
+    <!--        Services          -->
+</odoo>

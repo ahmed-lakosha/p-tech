@@ -94,8 +94,7 @@
             </xpath>
         </template>
 
-        <template id="footer_custom" inherit_id="website.layout" name="Custom Footer"
-                  active="False">
+        <template id="footer_custom" inherit_id="website.layout" name="Custom Footer" active="False">
             <xpath expr="//footer" position="replace">
                 <footer class="footer" id="footer" t-if="not no_footer">
                     <div class="footer-content text-white ptech-footer overflow-hidden" style="">
@@ -258,6 +257,21 @@
                             </div>
                         </div>
                     </div>
+                    <svg class="top-svg d-none d-lg-block" xmlns="http://www.w3.org/2000/svg" width="254" height="165"
+                         viewBox="0 0 254 165" fill="none">
+                        <path d="M-4.66241e-06 76.3104L366.667 -4.66241e-06V87.3889L0 165L-4.66241e-06 76.3104Z"
+                              fill="#0097FE"/>
+                    </svg>
+                    <svg class="mid-svg d-none d-lg-block" xmlns="http://www.w3.org/2000/svg" width="169" height="199"
+                         viewBox="0 0 169 199" fill="none">
+                        <path opacity="0.6" d="M0.5 198.404L0.499993 92.4559L531.5 0.593916V104.977L0.5 198.404Z"
+                              stroke="#66C1FF"/>
+                    </svg>
+                    <svg class="bottom-svg d-none d-lg-block" xmlns="http://www.w3.org/2000/svg" width="113" height="92"
+                         viewBox="0 0 113 92" fill="none">
+                        <path d="M-133.5 91.4048L-133.5 42.9701L112.5 0.593494V48.3059L-133.5 91.4048Z" fill="#0097FE"
+                              stroke="#0097FE"/>
+                    </svg>
                 </footer>
             </xpath>
         </template>
