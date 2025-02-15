@@ -31,5 +31,24 @@ $(function () {
                 },
             },
         });
+        $("#odoo_apps .owl-carousel").owlCarousel({
+            margin: 36,
+            autoHeight: false,
+            autoHeightClass: 'owl-height',
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 7000,
+            touchDrag: true,
+            dots: false,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 2,
+                },
+                768: {
+                    items: 4,
+                },
+            },
+        });
     });
 });

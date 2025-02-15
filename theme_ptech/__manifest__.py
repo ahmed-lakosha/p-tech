@@ -19,7 +19,8 @@
         'security/ir.model.access.csv',
 
         'views/customize_template.xml',
-        'views/faqs_views.xml',
+        'views/website_services.xml',
+        'views/website_blogs.xml',
 
         'data/pages.xml',
     ],

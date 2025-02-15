@@ -12,9 +12,13 @@ class WebsitePtech(Website):
             company_id = http.request.env.company.id
             domain = [('company_id', '=', company_id)]
             service_ids = http.request.env['website.services'].sudo().search(domain)
+            app_ids = http.request.env['blog.post'].sudo().search([('is_app', '=', True)])
+        
             data = {
                 'service_ids': service_ids,
+                'app_ids': app_ids,
             }
+            print(data)
             return http.request.render('website.homepage', data)
         else:
             return super(WebsitePtech, self).index(**kw)
