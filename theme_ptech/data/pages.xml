@@ -567,6 +567,83 @@
                             </div>
                         </div>
                     </div>
+                    <div id="partners" class="py-5 bg-image" t-if="partner_ids"
+                         style="background-image:url('/theme_ptech/static/src/img/partners.png');">
+                        <div class="container">
+                            <div class="d-flex justify-content-center">
+                                <h2 class="border-black border-bottom d-inline-block display-1 fw-bold mb-4 text-center text-white border-primary">
+                                    Our Partners
+                                </h2>
+                            </div>
+                            <div class="owl-carousel owl-theme o_not_editable">
+                                <t t-foreach="partner_ids" t-as="partner_id">
+                                    <div class="item o_not_editable">
+                                        <div class="partner-card">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="100%"
+                                                 viewBox="0 0 221 157" fill="none">
+                                                <g filter="url(#filter0_d_2853_1166)">
+                                                    <path d="M208.722 0.0424805H21.5022V148.369H208.722V0.0424805Z"
+                                                          fill="#252944"/>
+                                                    <path d="M22.1998 101.527C22.1998 101.527 58.2191 87.9348 86.6076 55.4455C114.996 22.9562 118.378 0.127033 118.378 0.127033L21.5022 0.0424805L22.1998 101.527Z"
+                                                          fill="#171932"/>
+                                                    <path d="M202.74 3.4873H26.8501V140.04H202.74V3.4873Z"
+                                                          fill="#0B2254"/>
+                                                    <g style="mix-blend-mode:screen" opacity="0.15">
+                                                        <path d="M51.2012 138.878L152.833 3.31885H190.015L98.2546 138.265L51.2012 138.878Z"
+                                                              fill="#1693EB"/>
+                                                    </g>
+                                                    <g style="mix-blend-mode:screen" opacity="0.15">
+                                                        <path d="M132.942 139.342L199.866 19.5527V74.1525L170.589 138.708L132.942 139.342Z"
+                                                              fill="#1693EB"/>
+                                                    </g>
+                                                    <path d="M25.1592 143.21L29.4925 143.062V4.03711H25.1592V143.21Z"
+                                                          fill="#0A0D1F"/>
+                                                    <path d="M201.24 143.021L205.573 143.042V3.4458H201.24V143.021Z"
+                                                          fill="#0A0D1F"/>
+                                                    <path d="M205.446 144.776H25.2014V138.836H205.467L205.446 144.776Z"
+                                                          fill="#0A0D1F"/>
+                                                    <path d="M185.724 0H208.511V28.8958H207.243V1.64877H184.858C184.858 1.64877 186.02 0 185.724 0Z"
+                                                          fill="white"/>
+                                                    <path d="M208.68 122.347V148.432H183.441V146.973H207.243V121.375C207.243 121.375 208.68 122.707 208.68 122.347Z"
+                                                          fill="white"/>
+                                                    <path d="M43.5491 0H20.7622V28.8958H22.0305V1.64877H44.4158C44.4158 1.64877 43.2532 0 43.5491 0Z"
+                                                          fill="white"/>
+                                                    <path d="M20.5723 122.347V148.432H45.8112V146.973H22.0308V121.375C22.0308 121.375 20.5723 122.707 20.5723 122.347Z"
+                                                          fill="white"/>
+                                                    <path d="M38.8356 57.0093H4V39.9932H21.5446V40.6907H4.7187V56.3118H38.8356V57.0093Z"
+                                                          fill="#0C8FE7"/>
+                                                    <path d="M216.734 117.38H208.723V116.661H216.015V101.378H198.534V100.681H216.734V117.38Z"
+                                                          fill="#0C8FE7"/>
+                                                </g>
+                                                <defs>
+                                                    <filter id="filter0_d_2853_1166" x="0" y="0" width="220.734"
+                                                            height="156.432" filterUnits="userSpaceOnUse"
+                                                            color-interpolation-filters="sRGB">
+                                                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                                                        <feColorMatrix in="SourceAlpha" type="matrix"
+                                                                       values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                                                                       result="hardAlpha"/>
+                                                        <feOffset dy="4"/>
+                                                        <feGaussianBlur stdDeviation="2"/>
+                                                        <feComposite in2="hardAlpha" operator="out"/>
+                                                        <feColorMatrix type="matrix"
+                                                                       values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                                                        <feBlend mode="normal" in2="BackgroundImageFix"
+                                                                 result="effect1_dropShadow_2853_1166"/>
+                                                        <feBlend mode="normal" in="SourceGraphic"
+                                                                 in2="effect1_dropShadow_2853_1166" result="shape"/>
+                                                    </filter>
+                                                </defs>
+                                            </svg>
+                                            <img class="ms-auto"
+                                                 t-attf-src="/web/image/website.partners/#{partner_id.id}/image"
+                                                 t-att-alt="partner_id.name"/>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
                     <div class="py-5 my-lg-5 text-center">
                         <div class="container">
                             <h2 class="display-3 fw-bold text-primary">

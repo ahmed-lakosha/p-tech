@@ -20,6 +20,7 @@
 
         'views/customize_template.xml',
         'views/website_services.xml',
+        'views/website_partners.xml',
         'views/website_blogs.xml',
 
         'data/pages.xml',

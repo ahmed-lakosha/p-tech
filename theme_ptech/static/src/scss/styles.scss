@@ -322,41 +322,30 @@ footer#footer {
     }
   }
 
-  .owl-nav {
-    .owl-prev, .owl-next {
+}
+
+#partners {
+  .partner-card {
+    position: relative;
+    min-height: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      object-fit: scale-down;
+    }
+
+    svg {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--primary);
-      border: 2px solid var(--primary);
-      border-radius: 50%;
-      font-size: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 40px;
-      width: 40px;
-      background-color: transparent !important;
-      transition: 0.3s ease-in-out;
-
-      &:hover {
-        background-color: var(--primary) !important;
-        color: #fff !important;
-      }
-
-      span {
-        margin-bottom: 7px;
-      }
-    }
-
-    .owl-prev {
+      top: 0;
       left: 0;
-      transform: translate(-150%, -50%);
-    }
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      padding-inline-end: 7px;
 
-    .owl-next {
-      right: 0;
-      transform: translate(150%, -50%);
     }
   }
 }

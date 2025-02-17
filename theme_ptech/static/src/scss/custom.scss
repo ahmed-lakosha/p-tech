@@ -5,6 +5,8 @@
 
 .home-page {
   background: #EBF7FF;
+  margin-bottom: -350px;
+  padding-bottom: 350px;
 
 }
 
@@ -96,4 +98,46 @@ a {
   display: inline-block;
   border-bottom: #fff 1px solid;
   color: var(--secondary) !important;
+}
+
+.o_rtl .owl-carousel {
+  direction: rtl;
+}
+
+.home-page .owl-carousel .owl-nav {
+  .owl-prev, .owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    background-color: transparent !important;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #fff !important;
+      color: var(--primary) !important;
+    }
+
+    span {
+      margin-bottom: 7px;
+    }
+  }
+
+  .owl-prev {
+    left: 0;
+    transform: translate(-150%, -50%);
+  }
+
+  .owl-next {
+    right: 0;
+    transform: translate(150%, -50%);
+  }
 }

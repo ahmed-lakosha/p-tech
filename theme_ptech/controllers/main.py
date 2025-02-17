@@ -1,6 +1,5 @@
-from odoo import http, models, fields
+from odoo import http
 from odoo.addons.website.controllers.main import Website
-from odoo.http import request
 
 
 class WebsitePtech(Website):
@@ -12,10 +11,12 @@ class WebsitePtech(Website):
             company_id = http.request.env.company.id
             domain = [('company_id', '=', company_id)]
             service_ids = http.request.env['website.services'].sudo().search(domain)
+            partner_ids = http.request.env['website.partners'].sudo().search(domain)
             app_ids = http.request.env['blog.post'].sudo().search([('is_app', '=', True)])
-        
+
             data = {
                 'service_ids': service_ids,
+                'partner_ids': partner_ids,
                 'app_ids': app_ids,
             }
             print(data)

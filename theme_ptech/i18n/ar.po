@@ -1,0 +1,671 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* theme_ptech
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20241208\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-16 20:10+0000\n"
+"PO-Revision-Date: 2025-02-16 22:58+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.5\n"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid ""
+"<i class=\"h5-fs fa fa-check-circle-o\" role=\"img\"/>\n"
+"                                                Thanks for registering!"
+msgstr ""
+"<i class=\"h5-fs fa fa-check-circle-o\" role=\"img\"/>\n"
+"شكرًا لك على التسجيل!"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"<span class=\"h3\">\n"
+"                                            <span class=\"text-secondary\">+</span>1500\n"
+"                                        </span>\n"
+"                                        <span class=\"text-secondary\">User</span>"
+msgstr ""
+"<span class=\"h3\">\n"
+"                                            <span class=\"text-secondary\">+</span>1500\n"
+"                                        </span>\n"
+"                                        <span class=\"text-secondary\">مستخدم</span>"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"<span class=\"h3\">\n"
+"                                            <span class=\"text-secondary\">+</span>20\n"
+"                                        </span>\n"
+"                                        <span class=\"text-secondary\">Integration</span>"
+msgstr ""
+"<span class=\"h3\">\n"
+"                                            <span class=\"text-secondary\">+</span>20\n"
+"                                        </span>\n"
+"                                        <span class=\"text-secondary\"> الربط الخارجي</span>"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"<span class=\"h3\">\n"
+"                                            <span class=\"text-secondary\">+</span>200\n"
+"                                        </span>\n"
+"                                        <span class=\"text-secondary\">APP</span>"
+msgstr ""
+"<span class=\"h3\">\n"
+"                                            <span class=\"text-secondary\">+</span>200\n"
+"                                        </span>\n"
+"                                        <span class=\"text-secondary\"> تطبيق منفذ</span>"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"<span class=\"h3\">\n"
+"                                            <span class=\"text-secondary\">+</span>80\n"
+"                                        </span>\n"
+"                                        <span class=\"text-secondary\">Project</span>"
+msgstr ""
+"<span class=\"h3\">\n"
+"                                            <span class=\"text-secondary\">+</span>80\n"
+"                                        </span>\n"
+"                                        <span class=\"text-secondary\"> مشروع مكتمل</span>"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_contact_us_page
+msgid ""
+"<span class=\"s_website_form_label_content o_default_snippet_text\">\n"
+"                                                            Phone Number\n"
+"                                                        </span>"
+msgstr ""
+"<span class=\"s_website_form_label_content o_default_snippet_text\">\n"
+"                                                            رقم الهاتف\n"
+"                                                        </span>"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_contact_us_page
+msgid ""
+"<span class=\"s_website_form_label_content o_default_snippet_text\">\n"
+"                                                            Subject\n"
+"                                                        </span>\n"
+"                                                        <span class=\"s_website_form_mark o_default_snippet_text\">*\n"
+"                                                        </span>"
+msgstr ""
+"<span class=\"s_website_form_label_content o_default_snippet_text\">\n"
+"                                                            الموضوع\n"
+"                                                        </span>\n"
+"                                                        <span class=\"s_website_form_mark o_default_snippet_text\">*\n"
+"                                                        </span>"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_contact_us_page
+msgid ""
+"<span class=\"s_website_form_label_content o_default_snippet_text\">\n"
+"                                                            Your Company\n"
+"                                                        </span>"
+msgstr ""
+"<span class=\"s_website_form_label_content o_default_snippet_text\">\n"
+"                                                            اسم الشركة\n"
+"                                                        </span>"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_contact_us_page
+msgid ""
+"<span class=\"s_website_form_label_content o_default_snippet_text\">\n"
+"                                                            Your Email\n"
+"                                                        </span>\n"
+"                                                        <span class=\"s_website_form_mark o_default_snippet_text\">*\n"
+"                                                        </span>"
+msgstr ""
+"<span class=\"s_website_form_label_content o_default_snippet_text\">\n"
+"                                                            البريد الالكتروني\n"
+"                                                        </span>\n"
+"                                                        <span class=\"s_website_form_mark o_default_snippet_text\">*\n"
+"                                                        </span>"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_contact_us_page
+msgid ""
+"<span class=\"s_website_form_label_content o_default_snippet_text\">\n"
+"                                                            Your Name\n"
+"                                                        </span>\n"
+"                                                        <span class=\"s_website_form_mark o_default_snippet_text\">*\n"
+"                                                        </span>"
+msgstr ""
+"<span class=\"s_website_form_label_content o_default_snippet_text\">\n"
+"                                                            الاسم كامل\n"
+"                                                        </span>\n"
+"                                                        <span class=\"s_website_form_mark o_default_snippet_text\">*\n"
+"                                                        </span>"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_contact_us_page
+msgid ""
+"<span class=\"s_website_form_label_content o_default_snippet_text\">\n"
+"                                                            Your Question\n"
+"                                                        </span>\n"
+"                                                        <span class=\"s_website_form_mark o_default_snippet_text\">*\n"
+"                                                        </span>"
+msgstr ""
+"<span class=\"s_website_form_label_content o_default_snippet_text\">\n"
+"                                                            الرساله\n"
+"                                                        </span>\n"
+"                                                        <span class=\"s_website_form_mark o_default_snippet_text\">*\n"
+"                                                        </span>"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"<span class=\"text-secondary\">Organizing your work</span>\n"
+"                                                <br/>starts here"
+msgstr ""
+"<span class=\"text-secondary\">تنظيم أعمــــــــــــــالك</span>\n"
+"                                                <br/>يبـــدأ من هنـــــا"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"A set of smart and advanced applications that give you full control\n"
+"                                    over your business."
+msgstr "مجموعة تطبيقات ذكية ومتطورة تمنحك السيطرة الكاملة على أعمالك"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid "About Us"
+msgstr "من نحن"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "About us?"
+msgstr "من نحن؟"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"At <span class=\"text-secondary\">Premium Tech</span>, organizing your work\n"
+"                                                starts\n"
+"                                                here! Efficiency and organization are key factors for achieving success.\n"
+"                                                With\n"
+"                                                Odoo, you can manage all aspects of your business, from project\n"
+"                                                management, sales, inventory, and human resources to accounting.\n"
+"                                                Odoo provides integrated tools that help streamline workflows, improve\n"
+"                                                performance, and reduce human errors, saving you time and effort so you\n"
+"                                                can\n"
+"                                                focus on growth and development."
+msgstr "في <span class=\"text-secondary\">Premium Tech</span> تنظيم أعمالك يبدأ من هنا\"\vتعد الكفاءة والتنظيم من العوامل الرئيسية لتحقيق النجاح باستخدام برنامج Odoo ، يمكنك تنظيم جميع جوانب عملك من إدارة المشاريـــــع، والمبيعات، والمخزون، والموارد البشرية، وحتى الحسابات يـــــوفر Odoo\vأدوات متكاملة تساعـــــدك على تسهيل سير العمـــــل، وتحسين الأداء، وتقليل الأخطاء البشرية، مما يوفر لك الوقت والجهد للتركيز على النمو والتطوير\v"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid ""
+"At Premium Tech, we are more than just a solutions provider – we are\n"
+"                                        your growth partner!With our expertise in ERP systems, especially Odoo, we\n"
+"                                        provide you with the tools and technologies that give you complete control over\n"
+"                                        your business."
+msgstr ""
+"في بريميم تك، نحن أكثر من مجرد مزود حلول، نحن شريكك في النمو! \n"
+"مع خبرتنا في أنظمة ERP   وخاصة أودو، نوفر لك الأدوات والتقنيات\n"
+"التي تمنحك السيطرة الكاملة على أعمالك."
+
+#. module: theme_ptech
+#: model:ir.model,name:theme_ptech.model_blog_post
+msgid "Blog Post"
+msgstr "منشور المدونة "
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Business Solutions"
+msgstr ""
+"حلول متكاملة \n"
+"لإدارة الأعمال"
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_website_partners__company_id
+#: model:ir.model.fields,field_description:theme_ptech.field_website_services__company_id
+msgid "Company"
+msgstr "إسم الشركة"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Comprehensive Management"
+msgstr "إدارة متكاملة"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"Contact\n"
+"                                                    us\n"
+"                                                    <i class=\"bi bi-arrow-right\"/>"
+msgstr "تواصل معنا الان<i class=\"bi bi-arrow-right\"/>"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid "Contact Us"
+msgstr "تواصل معنا"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Contact us"
+msgstr "تواصل معنا"
+
+#. module: theme_ptech
+#: model_terms:ir.actions.act_window,help:theme_ptech.id_action_partners
+#: model_terms:ir.actions.act_window,help:theme_ptech.id_action_services
+msgid "Create a Website Service"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:ir.actions.act_window,help:theme_ptech.id_action_partners
+msgid "Create and manage the Partners in your website"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:ir.actions.act_window,help:theme_ptech.id_action_services
+msgid "Create and manage the Services in your website"
+msgstr ""
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_website_partners__create_uid
+#: model:ir.model.fields,field_description:theme_ptech.field_website_services__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_website_partners__create_date
+#: model:ir.model.fields,field_description:theme_ptech.field_website_services__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.custom_footer
+msgid "Custom Footer"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.custom_header
+msgid "Custom Header"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid "Customer Serves"
+msgstr "للتواصـــــــل"
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_website_services__description
+msgid "Description"
+msgstr ""
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_website_partners__display_name
+#: model:ir.model.fields,field_description:theme_ptech.field_website_services__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid "E-mail address"
+msgstr "البريد الالكتروني"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"Efficiency &amp;\n"
+"                                            Productivity"
+msgstr ""
+"تحسين الكفاءة \n"
+"والإنتاجية"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"Experience &amp;\n"
+"                                            Credibility"
+msgstr "خبرة ومصداقية"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_contact_us_page
+msgid ""
+"Get in touch with your customers to\n"
+"                                provide them with better service. You can modify the form fields to gather more precise\n"
+"                                information."
+msgstr ""
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_website_partners__id
+#: model:ir.model.fields,field_description:theme_ptech.field_website_services__id
+msgid "ID"
+msgstr ""
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_blog_post__icon
+msgid "Icon"
+msgstr ""
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_website_partners__image
+#: model:ir.model.fields,field_description:theme_ptech.field_website_services__image
+msgid "Image"
+msgstr ""
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_blog_post__is_app
+msgid "Is Odoo App"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"Join the success partners and be part of\n"
+"                                the\n"
+"                                future! Contact us today, and let us help you achieve your vision with ease and\n"
+"                                efficiency."
+msgstr ""
+"انضم إلى شركاء النجاح وكن جزءًا من\n"
+"المستقبل! اتصل بنا اليوم، ودعنا نساعدك على تحقيق رؤيتك بسهولة وفعالية."
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_website_partners__write_uid
+#: model:ir.model.fields,field_description:theme_ptech.field_website_services__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_website_partners__write_date
+#: model:ir.model.fields,field_description:theme_ptech.field_website_services__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"Leading \"<span class=\"text-secondary\">Premium Tech</span>\"\n"
+"                                is a company specializing in providing innovative\n"
+"                                business management solutions, focusing on improving efficiency and organizing business\n"
+"                                operations through advanced software. We take pride in being the ideal partner of Odoo,\n"
+"                                which offers the most powerful software solutions in the market. These solutions help\n"
+"                                companies manage all aspects of their business, such as sales, inventory, human\n"
+"                                resources, accounting, and many other operations in an integrated and efficient manner,\n"
+"                                thanks to expertise and professionalism."
+msgstr "شركة \"<span class=\"text-secondary\">Premium Tech</span>\" هي شركة متخصصة في تقديم حلول مبتكرة لإدارة الأعمال، حيث تركز على تحسين كفاءة وتنظيم العمليات التجارية من خلال برامج متطورة نحن نفخر بكوننا الشريك المثالى لشركة اودو التى تقــــدم\v أقوى الحلول البرمجية في السوق، حيث تساعد الشركات في إدارة جميع جوانب أعمالها مثل المبيعــــــــــــــات، والمخزون، والموارد البشرية، والمحاسبة، والعديد من العمليات الأخرى بطريقة متكاملة وفعّالة بفضل الخبرة والاحترافية "
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_contact_us_page
+msgid "Let's Connect"
+msgstr "لنتواصل معا"
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_website_partners__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Odoo APPs"
+msgstr "التطبيقـــــات"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid "Odoo apps"
+msgstr "التطبيقـــــات"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Our Mission"
+msgstr "مهمتنــــا"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Our Partners"
+msgstr "عملائنــــــــــــــا"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Our Services"
+msgstr "خدمـــــاتنـــــا"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Our Vision"
+msgstr "رؤيتنــــــا"
+
+#. module: theme_ptech
+#: model:ir.actions.act_window,name:theme_ptech.id_action_partners
+#: model:ir.ui.menu,name:theme_ptech.menu_partners
+msgid "Partners"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid "Phone number"
+msgstr "رقم التليفون"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"Premium High\n"
+"                                            Quality"
+msgstr "الجــــــودة"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"Premium Tech offers comprehensive solutions to help you manage\n"
+"                                            all aspects of your business."
+msgstr "تقدم  شركة \"بريميم تك\" حلولًا شاملة تساعدك على إدارة جميع جوانب عملك"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"Premium Tech provides smart tools that help you enhance\n"
+"                                            efficiency and reduce time wasted on manual tasks, significantly increasing\n"
+"                                            productivity."
+msgstr "تمتلك  شركة \"بريميم تك\" الأدوات الذكيــــة التى تساعدك على تحسين الكفاءة وتقليل الوقت المهدر في الأعمال اليدوية، مما يزيد من الإنتاجية بشكل ملحوظ"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid "Premium Tech © 2025, All rights reserved"
+msgstr "Premium Tech © 2025, كل الحقوق محفوظة لشركه"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"Providing comprehensive and\n"
+"                                            integrated technological solutions that meet the needs of institutions and\n"
+"                                            companies across various sectors by offering advanced software and hardware\n"
+"                                            based on the latest innovations. With flexibility in meeting your\n"
+"                                            requirements, we operate with a qualified team that possesses expertise and\n"
+"                                            certified credentials to ensure the delivery of high-quality services. Our\n"
+"                                            goal is to drive digital transformation and enhance the success of our\n"
+"                                            clients."
+msgstr "تقديم حلول تقنية متكاملة وشاملة تلبي احتياجـــــــــــات المؤسسات والشركات في مختلف القطاعات، من خلال توفير برمجيات وأجهزة متطـــــورة تعتمد على أحــــــــــــــدث الابتكارات.، والمرونة في تلبية احتياجاتــــك نعمل بفريق\v عمل مؤهل يمتلك الخبرة والشهادات المعتمدة لضمان تقديم خدمات بجودة عالية تساهم في تحقيق التحــــول الرقمي وتعزيز نجاح عملائنا."
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Remarkable Results starts here"
+msgstr "نتائــــج مبهـــــرة"
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_website_partners__sequence
+#: model:ir.model.fields,field_description:theme_ptech.field_website_services__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: theme_ptech
+#: model:ir.actions.act_window,name:theme_ptech.id_action_services
+#: model:ir.ui.menu,name:theme_ptech.menu_services
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid "Services"
+msgstr "خدامتنا"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid "Short links"
+msgstr "روابط سريعة"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.template_login_btn
+msgid "Sign in"
+msgstr "تسجيل الدخول"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Sign up"
+msgstr "  سجل معنا"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"Sign up\n"
+"                                    <i class=\"bi bi-arrow-right\"/>"
+msgstr ""
+"سجل معنا\n"
+"                                    <i class=\"bi bi-arrow-right\"/>"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Slide 1"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Slide 2"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Slide 3"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"Smart Solutions for Outstanding\n"
+"                                                Performance"
+msgstr "حُلول ذكية لأداء متميز"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_contact_us_page
+msgid "Submit"
+msgstr "ارسل"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"Support\n"
+"                                            &amp; Training"
+msgstr ""
+"دعم مستمر\n"
+" وتـــــــــدريب"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Technical Support"
+msgstr "دعم فني متخصص"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"The use of technology and advanced tools is essential for achieving\n"
+"                                                optimal\n"
+"                                                performance at work. In today’s business world, every entrepreneur needs\n"
+"                                                innovative solutions to enhance efficiency and make smarter decisions."
+msgstr "ضرورة استخدام التكنولوجيا والأدوات المتطورة لتحقيق أفضل أداء في العمل. في عالم الأعمال اليوم، يحتاج كل صاحب مشروع إلى حلول مبتكرة تساعــــــــده على تحسين الكفاءة واتخاذ قرارات أكثر ذكاءً.\v"
+
+#. module: theme_ptech
+#: model:ir.model,name:theme_ptech.model_theme_utils
+msgid "Theme Utils"
+msgstr "أدوات السمة"
+
+#. module: theme_ptech
+#: model:ir.model.fields,field_description:theme_ptech.field_website_services__title
+msgid "Title"
+msgstr ""
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"To be the leading and most trusted\n"
+"                                            partner in providing innovative Enterprise Resource Planning (ERP) solutions\n"
+"                                            by empowering businesses to enhance their operational efficiency and drive\n"
+"                                            growth. We strive to become the first name that comes to mind for\n"
+"                                            entrepreneurs and companies when discussing reliable technology and\n"
+"                                            integrated software solutions that combine high quality with deep business\n"
+"                                            expertise, ensuring long-term success and sustainability."
+msgstr "أن نكون الشريك الرائد والأكثر ثقة في تقديم حلول تخطيط موارد المؤسسات (ERP) المبتكرة ، من خلال تمكين الشركات من تحسين كفاءتــــــــها التشغيلية وتعزيز نموها. نسعى لأن نصبح الاسم الأول الـــذي\vيتبادر إلى ذهن رواد الأعمال والشركات عند الحديث عن التكنولوجيا الموثوقة والحلول البرمجية المتكاملة التي تجمع بين الجودة العالية، الخبرة العميقة الأعمال"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"True success in business comes from the integration of all departments.\n"
+"                                                Every aspect of your business should work in harmony to achieve the best\n"
+"                                                results. This is exactly what Odoo offers—a comprehensive solution that\n"
+"                                                connects all your business operations into a single platform."
+msgstr "النجاح الحقيقي في الأعمال يأتي من التكامل بين جميع أقسام العمل. فكل جانب من جوانب العمل يجب أن تعمل بتناغم لتحقيق أفضل النتائج. وهذا ما يقدمه برنامج Odoo، حيث يوفر حلاً متكاملاً يربط جميع عمليات عمــــــــلك في منصة واحدة."
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"We provide exceptional technical support from a team of\n"
+"                                            professional experts, helping you resolve any issues or inquiries quickly\n"
+"                                            and efficiently."
+msgstr "نحن نقدم دعمًا فنيًا متميزًا من فريق خبراء محترف، يساعدك في حل أي مشاكـــــل أو استفسارات بسرعة وبفعالية"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"We provide training and ongoing support to ensure you can use the\n"
+"                                            software efficiently and maximize its benefits."
+msgstr "نقدم لك التدريب والدعم المستمر لضمان أن تتمكـن من استخــــــدام البرنــــــــامج بكفــــاءة وتحقيق أقصى استفادة منه"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Why Choose Premium Tech?"
+msgstr "لماذا تختار بريميم تك ؟"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"With Premium Tech, you can trust that quality is the foundation of\n"
+"                                            everything we do. We are committed to providing advanced technological\n"
+"                                            solutions that combine precision and innovation, making us the first choice\n"
+"                                            for companies seeking excellence."
+msgstr "مع بريميم تك، يمكنك الوثــــوق بأن الجـــــودة هي الأســـــاس الـــــــذي نعتمد عليه في كـــل خطوة حيث نلتزم بتوفير حلول تقنية متطورة تجمع بين الدقة والابتكار، ما يجعلنا الخيـــــار الأول للشركات التي تبحث عن التميز"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid ""
+"With years of market experience and a professional team, Premium\n"
+"                                            Tech is a trusted partner to help you achieve your business goals."
+msgstr "مع سنوات من الخبرة في السوق وفريق محترف، تعتبر شركة \"بريميم تك\" شريكًا موثوقًا لمساعدتك في تحقيق أهدافك التجارية"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.costume_home_page
+msgid "Your journey to success starts here."
+msgstr "رحلتك نحو النجاح تبدأ من هنا "
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid "home"
+msgstr "الرئيسية"
+
+#. module: theme_ptech
+#: model_terms:theme.ir.ui.view,arch:theme_ptech.footer_custom
+msgid "johnsmith@example.com"
+msgstr ""
+
+#. module: theme_ptech
+#: model:ir.model,name:theme_ptech.model_website_partners
+msgid "website.partners"
+msgstr ""
+
+#. module: theme_ptech
+#: model:ir.model,name:theme_ptech.model_website_services
+msgid "website.services"
+msgstr ""
