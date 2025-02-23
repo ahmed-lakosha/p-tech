@@ -33,9 +33,7 @@ class WebsiteServices(http.Controller):
     def services(self, **kw):
         company_id = http.request.env.company.id
         domain = [('company_id', '=', company_id)]
-        service_ids = http.request.env['website.services'].sudo().search(domain)
-        print(service_ids)
-
+        service_ids = http.request.env['website.services'].sudo().search(domain, order='sequence asc')
         data = {
             'service_ids': service_ids,
         }
