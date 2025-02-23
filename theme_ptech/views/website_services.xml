@@ -12,6 +12,7 @@
                             <field name="title"/>
                             <field name="description"/>
                             <field name="image" widget="image"/>
+                            <field name="banner_image" widget="image"/>
                             <field name="sequence" invisible="1"/>
                         </group>
                     </group>
