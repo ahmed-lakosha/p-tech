@@ -324,6 +324,10 @@ footer#footer {
 
 }
 
+.o_rtl #services .service-card {
+  direction: ltr;
+}
+
 #partners {
   .partner-card {
     position: relative;

@@ -1,30 +1,24 @@
-from odoo import http, tools, fields
-from odoo.addons.website.controllers.main import Website
+from odoo import http, fields, tools
 from odoo.addons.website_blog.controllers.main import WebsiteBlog
 from odoo.http import request
+from odoo.addons.website.controllers.main import Website
 
 
 class WebsitePtech(Website):
     def index(self, **kw):
-        current_website = http.request.website
-        active_theme = current_website.theme_id
-
-        if active_theme and active_theme.name == 'theme_ptech':
-            company_id = http.request.env.company.id
-            domain = [('company_id', '=', company_id)]
-            service_ids = http.request.env['website.services'].sudo().search(domain, order='sequence asc')
-            partner_ids = http.request.env['website.partners'].sudo().search(domain, order='sequence asc')
-            app_ids = http.request.env['blog.post'].sudo().search([('is_app', '=', True)], order='sequence asc')
-
-            data = {
-                'service_ids': service_ids,
-                'partner_ids': partner_ids,
-                'app_ids': app_ids,
-            }
-            print(data)
-            return http.request.render('website.homepage', data)
-        else:
-            return super(WebsitePtech, self).index(**kw)
+        """ Extend the original method """
+        res = super(WebsitePtech, self).index(**kw)
+        company_id = http.request.env.company.id
+        domain = [('company_id', '=', company_id)]
+        service_ids = http.request.env['website.services'].sudo().search(domain, order='sequence asc')
+        partner_ids = http.request.env['website.partners'].sudo().search(domain, order='sequence asc')
+        app_ids = http.request.env['blog.post'].sudo().search([('is_app', '=', True)], order='sequence asc')
+        res.qcontext.update({
+            'service_ids': service_ids,
+            'partner_ids': partner_ids,
+            'app_ids': app_ids,
+        })
+        return res
 
 
 class WebsiteServices(http.Controller):
